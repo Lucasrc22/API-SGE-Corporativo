@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+
+.env
+.env.*
+!.env.example
+
+venv/
+.venv/
+
+# Os CSVs sao o banco de dados desta API: dado de producao, nao codigo.
+# A pasta continua no repositorio (via .gitkeep) porque write_products_to_csv
+# abre o arquivo em modo "w" e falha se o diretorio nao existir.
+app/data/*
+!app/data/.gitkeep
+

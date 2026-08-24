@@ -1,0 +1,21 @@
+
+
+name: sge-backend
+
+services:
+  api:
+    build:
+      context: .
+    image: sge-backend
+    container_name: sge-backend
+    ports:
+      - "8007:8007"
+
+    env_file:
+      - .env
+    volumes:
+      # Os CSVs sao o banco de dados desta API: precisam viver no host, nao na imagem.
+
+      - ./app/data:/app/app/data
+    restart: unless-stopped
+
